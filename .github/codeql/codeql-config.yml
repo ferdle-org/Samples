@@ -1,0 +1,22 @@
+name: "CodeQL for C# Project"
+
+codeql:
+  # Specify the languages to be analyzed.
+  languages:
+    - csharp
+  # Paths to exclude from the analysis.
+  paths-ignore:
+    - "**/bin/**"
+    - "**/obj/**"
+
+  # Set database options to control the CodeQL database creation process.
+  db:
+    run-tests: false
+
+  # CodeQL queries to run during analysis.
+  queries:
+    - uses: github/codeql/csharp-queries@latest
+
+  # Additional build configuration.
+  autobuild:
+    enabled: false  # Disable autobuild since we are explicitly building the solution in the workflow.
